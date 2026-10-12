@@ -1,0 +1,15 @@
+[Unit]
+Description=Proof of Ant crank (closes epochs)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ant
+WorkingDirectory=/opt/proof-of-ant
+EnvironmentFile=/etc/proof-of-ant.env
+ExecStart=/usr/bin/npx tsx scripts/crank.ts
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

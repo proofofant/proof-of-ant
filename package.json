@@ -1,0 +1,30 @@
+{
+  "license": "ISC",
+  "scripts": {
+    "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+    "local:validator": "./scripts/local-validator.sh",
+    "local:setup": "tsx scripts/setup.ts",
+    "local:crank": "tsx scripts/crank.ts",
+    "devnet:deploy": "anchor deploy --provider.cluster devnet",
+    "devnet:setup": "CLUSTER=devnet tsx scripts/setup.ts",
+    "devnet:crank": "CLUSTER=devnet tsx scripts/crank.ts",
+    "use:local": "cp app/.env.localnet app/.env.local",
+    "use:devnet": "cp app/.env.devnet app/.env.local",
+    "sync-idl": "cp target/idl/proof_of_ant.json app/lib/idl.json && cp target/types/proof_of_ant.ts app/lib/proof_of_ant.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1"
+  },
+  "devDependencies": {
+    "@solana/spl-token": "^0.4.13",
+    "@types/bn.js": "^5.1.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^10.0.10",
+    "chai": "^4.3.4",
+    "mocha": "^11.8.0",
+    "prettier": "^2.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.3"
+  }
+}

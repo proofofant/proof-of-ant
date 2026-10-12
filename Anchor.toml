@@ -1,0 +1,22 @@
+[toolchain]
+package_manager = "npm"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+proof_of_ant = "6XpBQEvCBfx4WM1iGDpUyFGkGXVTXXxcp7pvV6uZEhUU"
+
+[programs.devnet]
+proof_of_ant = "6XpBQEvCBfx4WM1iGDpUyFGkGXVTXXxcp7pvV6uZEhUU"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = ".keys/dev.json"
+
+[scripts]
+test = "npx mocha --import=tsx -t 1000000 tests/**/*.ts"

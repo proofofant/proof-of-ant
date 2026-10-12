@@ -1,0 +1,15 @@
+[Unit]
+Description=Proof of Ant site
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ant
+WorkingDirectory=/opt/proof-of-ant/app
+EnvironmentFile=/etc/proof-of-ant.env
+ExecStart=/usr/bin/npx next start -p ${PORT} -H 127.0.0.1
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

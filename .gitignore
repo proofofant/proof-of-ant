@@ -1,0 +1,20 @@
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
+.keys/
+.ledger/
+.ledger-validator.log
+
+# local env and secrets
+.env*
+app/.env*
+*.pem
+
+# generated / local tooling
+**/__pycache__/
+art/out/
+*.tsbuildinfo
